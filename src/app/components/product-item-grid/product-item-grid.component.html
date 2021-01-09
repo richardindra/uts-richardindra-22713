@@ -1,0 +1,11 @@
+<ion-card>
+  <ion-img [src]="product.imageUrl"></ion-img>
+  <ion-card-header>
+    <ion-card-subtitle>{{product.brand}} - {{product.type}}</ion-card-subtitle>
+    <ion-card-title><b>{{product.model}}</b></ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    Rp. {{formatNumber(product.price)}}.00<br>
+    Tersedia : {{product.stock}}
+  </ion-card-content>
+</ion-card>

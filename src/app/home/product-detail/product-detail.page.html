@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="4" offset-sm="4">
+        <ion-card>
+          <ion-img [src]="product.imageUrl"></ion-img>
+          <ion-card-header>
+            <ion-card-subtitle>{{product.brand}}</ion-card-subtitle>
+            <ion-card-title>{{product.model}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Rp. {{formatNumber(product.price)}}.00<br>
+            Tersedia : {{product.stock}}<br><br>
+            <b>Tentang Produk</b><br>
+            <ng-container *ngIf="product.type == 'CPU'">
+              Tipe: CPU<br>
+              Base Clock: {{product.baseClock}} GHz<br>
+              Boost Clock: {{product.boostClock}} GHz<br>
+              Core / Thread: {{product.core}} Core {{product.thread}} Thread
+            </ng-container>
+            <ng-container *ngIf="product.type == 'RAM'">
+              Tipe: RAM<br>
+              Speed: {{product.speed}} MHz<br>
+              Size: {{product.size}} GB
+            </ng-container>
+            <ng-container *ngIf="product.type == 'Motherboard'">
+              Tipe: Motherboard<br>
+              Chipset: {{product.chipset}}<br>
+              Target: {{product.target}}
+            </ng-container>
+            <ng-container *ngIf="product.type == 'GPU'">
+              Tipe: GPU
+            </ng-container>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

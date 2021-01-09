@@ -1,0 +1,13 @@
+<ion-item>
+  <ion-thumbnail slot="start">
+    <ion-img [src]="product.imageUrl"></ion-img>
+  </ion-thumbnail>
+  <ion-label>
+    <b>{{product.brand}} {{product.model}}</b><br>
+    <small>
+      <b>{{product.type}}</b><br>
+      Rp. {{formatNumber(product.price)}}.00<br>
+      Tersedia : {{product.stock}}
+    </small>
+  </ion-label>
+</ion-item>
